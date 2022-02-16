@@ -1,0 +1,9 @@
+.nav-bar {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

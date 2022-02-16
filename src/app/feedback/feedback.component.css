@@ -1,0 +1,17 @@
+.feedback-form-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.feedback-form {
+  width: 40%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mat-radio-button {
+  margin: 10px;
+}

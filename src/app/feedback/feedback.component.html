@@ -1,0 +1,94 @@
+<div class="feedback-form-container">
+  <mat-card class="feedback-form mat-elevation-z6">
+    <mat-card-title i18n>Feedback form</mat-card-title>
+    <mat-card-content>
+      <form
+        #feedbackForm="ngForm"
+        (ngSubmit)="feedbackForm.form.valid && saveFeedback()"
+        novalidate
+      >
+        <mat-form-field class="full-width">
+          <input
+            i18n-placeholder
+            matInput
+            placeholder="Name"
+            name="name"
+            [(ngModel)]="customerFeedback.name"
+            #name="ngModel"
+            required
+          />
+          <mat-error
+            i18n="Required error message for name field"
+            *ngIf="feedbackForm.submitted && name.errors?.['required']"
+            >Name is required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-select
+            i18n
+            i18n-placeholder
+            placeholder="Gender"
+            name="gender"
+            [(ngModel)]="customerFeedback.gender"
+            #gender="ngModel"
+            required
+          >
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+            <mat-option value="Others">Other</mat-option>
+          </mat-select>
+          <mat-error
+            i18n="Required error message for gender field"
+            *ngIf="feedbackForm.submitted && gender.errors?.['required']"
+            >Gender is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <textarea
+            i18n-placeholder
+            matInput
+            placeholder="Comment"
+            name="comment"
+            [(ngModel)]="customerFeedback.comment"
+            #comment="ngModel"
+            required
+          ></textarea>
+          <mat-error
+            i18n="Required error message for comment field"
+            *ngIf="feedbackForm.submitted && comment.errors?.['required']"
+            >Comment is required
+          </mat-error>
+        </mat-form-field>
+        <label i18n class="example-margin">Rate our customer service: </label>
+        <mat-radio-group
+          i18n
+          class="example-radio-group"
+          name="rating"
+          [(ngModel)]="customerFeedback.rating"
+          #rating="ngModel"
+          required
+        >
+          <mat-radio-button class="example-radio-button" value="Excellent">
+            Excellent
+          </mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="Good">
+            Good
+          </mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="Bad">
+            Bad
+          </mat-radio-button>
+        </mat-radio-group>
+        <mat-error
+          i18n="Required error message for rating field"
+          *ngIf="feedbackForm.submitted && rating.errors?.['required']"
+          >Rating is required</mat-error
+        >
+        <mat-card-actions align="end">
+          <button i18n type="submit" mat-raised-button color="primary">
+            Submit
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
