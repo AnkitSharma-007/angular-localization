@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Feedback } from '../models/feedback';
 
 @Component({
@@ -6,12 +6,8 @@ import { Feedback } from '../models/feedback';
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.css'],
 })
-export class FeedbackComponent implements OnInit {
+export class FeedbackComponent {
   customerFeedback = new Feedback();
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   saveFeedback() {
     alert(

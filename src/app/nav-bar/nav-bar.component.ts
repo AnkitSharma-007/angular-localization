@@ -10,15 +10,8 @@ export class NavBarComponent implements OnInit {
   siteLocale = 'en';
   languageList = [
     { code: 'en', label: 'English' },
-    { code: 'de', label: 'Deutsch' },
+    { code: 'fr', label: 'Français' },
   ];
-
-  constructor() {
-    this.languageList = [
-      { code: 'en', label: 'English' },
-      { code: 'fr', label: 'Français' },
-    ];
-  }
 
   ngOnInit() {
     this.siteLocale = window.location.pathname.split('/')[1];
