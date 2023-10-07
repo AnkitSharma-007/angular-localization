@@ -11,7 +11,7 @@ export class FeedbackComponent {
 
   saveFeedback() {
     alert(
-      $localize`Thanks for your valuable feedback!!!\nThe feedback has been submitted succesfully.`
+      $localize`:Form submission message:Thank you for the valuable feedback!!!\nYour feedback has been submitted successfully.`
     );
     console.table(this.customerFeedback);
   }

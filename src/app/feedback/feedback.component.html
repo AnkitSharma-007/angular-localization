@@ -1,18 +1,26 @@
 <div class="feedback-form-container">
   <mat-card class="feedback-form mat-elevation-z6">
-    <mat-card-title i18n>Feedback form</mat-card-title>
+    <mat-card-header>
+      <mat-card-title class="mat-h1" i18n="feedback form title"
+        >Feedback form</mat-card-title
+      >
+    </mat-card-header>
+
     <mat-card-content>
       <form
         #feedbackForm="ngForm"
         (ngSubmit)="feedbackForm.form.valid && saveFeedback()"
         novalidate
       >
-        <mat-form-field class="full-width">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label i18n="label for name field in feedback form"
+            >Name</mat-label
+          >
           <input
-            i18n-placeholder
             matInput
-            placeholder="Name"
             name="name"
+            placeholder="Name"
+            i18n-placeholder="placeholder for name field in feedback form"
             [(ngModel)]="customerFeedback.name"
             #name="ngModel"
             required
@@ -23,11 +31,13 @@
             >Name is required</mat-error
           >
         </mat-form-field>
-        <mat-form-field class="full-width">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label i18n="label for gender field in feedback form"
+            >Gender</mat-label
+          >
           <mat-select
-            i18n
-            i18n-placeholder
             placeholder="Gender"
+            i18n-placeholder="placeholder for gender field in feedback form"
             name="gender"
             [(ngModel)]="customerFeedback.gender"
             #gender="ngModel"
@@ -43,11 +53,14 @@
             >Gender is required
           </mat-error>
         </mat-form-field>
-        <mat-form-field class="full-width">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label i18n="label for comment field in feedback form"
+            >Comment</mat-label
+          >
           <textarea
-            i18n-placeholder
             matInput
             placeholder="Comment"
+            i18n-placeholder="placeholder for comment field in feedback form"
             name="comment"
             [(ngModel)]="customerFeedback.comment"
             #comment="ngModel"
@@ -59,7 +72,9 @@
             >Comment is required
           </mat-error>
         </mat-form-field>
-        <label i18n class="example-margin">Rate our customer service: </label>
+        <mat-label i18n="label for rating field in feedback form"
+          >Rate our customer service:
+        </mat-label>
         <mat-radio-group
           i18n
           class="example-radio-group"
