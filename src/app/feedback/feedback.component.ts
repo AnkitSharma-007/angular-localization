@@ -13,6 +13,6 @@ export class FeedbackComponent {
     alert(
       $localize`:Form submission message:Thank you for the valuable feedback!!!\nYour feedback has been submitted successfully.`
     );
-    console.table(this.customerFeedback);
+    console.log('Form value is:', this.customerFeedback);
   }
 }

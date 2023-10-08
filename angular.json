@@ -8,10 +8,10 @@
       "i18n": {
         "locales": {
           "en": {
-            "translation": "src/translate/messages.en.xlf"
+            "translation": "src/locale/messages.en.xlf"
           },
           "fr": {
-            "translation": "src/translate/messages.fr.xlf"
+            "translation": "src/locale/messages.fr.xlf"
           }
         }
       },

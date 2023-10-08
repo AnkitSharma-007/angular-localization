@@ -16,9 +16,9 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
     this.siteLocale = window.location.pathname.split('/')[1];
 
-    const selectedLanguage = this.languageList
-      .find((language) => language.code === this.siteLocale)
-      ?.label.toString();
+    const selectedLanguage = this.languageList.find(
+      (language) => language.code === this.siteLocale
+    )?.label;
 
     if (selectedLanguage) {
       this.siteLanguage = selectedLanguage;
